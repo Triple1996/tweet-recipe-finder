@@ -1,0 +1,18 @@
+from tweepy import OAuthHandler
+from tweepy import API
+from tweepy import Cursor
+from datetime import datetime, date, time, timedelta
+from collections import Counter
+import sys
+import flask
+import os
+
+consumer_key=os.environ['API_KEY']
+consumer_secret=os.environ['API_SECRET_KEY']
+access_token=os.environ['ACCESS_TOKEN']
+access_token_secret=os.environ['ACCESS_TOKEN_SECRET']
+
+auth = OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+auth_api = API(auth)
+
