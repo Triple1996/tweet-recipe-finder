@@ -12,9 +12,15 @@ consumer_secret=os.environ['API_SECRET_KEY']
 access_token=os.environ['ACCESS_TOKEN']
 access_token_secret=os.environ['ACCESS_TOKEN_SECRET']
 
+foods = ['Lasagna', 'Gyro', 'Smoked Salmon', 'Taco', 'Burger', 'Quesadilla', 'Hot Dog']
+
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 auth_api = API(auth)
+
+result = auth_api.search(q='Halo Infinite', count=1)
+tweet = result[0].text
+
 
 app = flask.Flask(__name__)
 
@@ -22,7 +28,10 @@ app = flask.Flask(__name__)
 def index():
 
     return flask.render_template(
-        "index.html"
+        "index.html",
+        foods=foods,
+        lenFoods=len(foods),
+        tweet=tweet
         )
     
 app.run(
