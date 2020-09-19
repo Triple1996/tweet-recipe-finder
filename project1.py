@@ -25,10 +25,11 @@ app = flask.Flask(__name__)
 def index():
     
     randFood = random.randint(0,6)
-    result = auth_api.search(q=foods[randFood], lang = "en", count=100)
-    while result is None:
-        result = auth_api.search(q=foods[randFood], lang = "en", count=100)
-    randI = random.randint(0, 99)
+    result = auth_api.search(q=foods[randFood], lang = "en", count=10)
+    randI = random.randint(0, 4)
+    while len(result) < randI+1:
+        result = auth_api.search(q=foods[randFood], lang = "en", count=10)
+    randI = random.randint(0, 4)
     tweet = result[randI].text
     user = result[randI]
 

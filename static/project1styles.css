@@ -1,5 +1,9 @@
 body {
     background-color: #00FFFF;
     text-align: center;
-    padding: 2em;
+    padding-top: 10%;
+}
+h1 {
+    text-align: left;
+    padding-left: 30%;
 }
