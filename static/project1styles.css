@@ -1,7 +1,10 @@
 body {
-    background-color: #00FFFF;
+    background-color:#d9b3ff;
     text-align: center;
     padding-top: 10%;
+    background-repeat: no-repeat;
+
+    background-size: cover;
 }
 h1 {
     text-align: left;
