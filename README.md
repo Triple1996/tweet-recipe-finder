@@ -3,7 +3,7 @@ This program generates a random tweet based on a food selected from a list.
 To set this up on your machine you will need to follow these steps:
 
 1. Sign up for a Twitter developer account and find:
-2. 
+
         a. API key.      
 
         b. API secrete key
@@ -15,7 +15,7 @@ To set this up on your machine you will need to follow these steps:
 2. Clone this repository using git clone
 3. In your local copy of this repo, create a new root-level file called project1.env
 4. Add the follwing lines into project1.env
-5. 
+
         a. export API_KEY='your_key_here'
 
         b. export API_SECRET_KEY='your_key_here'
