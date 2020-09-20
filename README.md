@@ -4,17 +4,26 @@ To set this up on your machine you will need to follow these steps:
 
 1. Sign up for a Twitter developer account and find:
         a. API key.      
+
         b. API secrete key
+        
         c. ACCESS TOKEN key
+        
         d. ACCESS TOKEN SECRET key  (THESE ARE SECRET DO NOT SHARE WITH ANYONE)
+        
 2. Clone this repository using git clone
 3. In your local copy of this repo, create a new root-level file called project1.env
 4. Add the follwing lines into project1.env
         a. export API_KEY='your_key_here'
+
         b. export API_SECRET_KEY='your_key_here'
+        
         c. export ACCESS_TOKEN='your_key_here'
+    
         d. export ACCESS_TOKEN_SECRET='your_key_here'
+        
     Do not forget to save the file and run the command: source project1.env
+    
 5. run the following, where the brackets indicate optional changes to the command you may have to run:
     [sudo] [/path/to/]pip[3] install tweepy
 
