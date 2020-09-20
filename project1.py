@@ -24,20 +24,16 @@ app = flask.Flask(__name__)
 @app.route('/') # Python decorator
 def index():
     
-    randFood = random.randint(0,6)
-    result = auth_api.search(q=foods[randFood], lang = "en", count=10)
-    randI = random.randint(0, 4)
-    while len(result) < randI+1:
-        result = auth_api.search(q=foods[randFood], lang = "en", count=10)
-    randI = random.randint(0, 4)
-    tweet = result[randI].text
-    user = result[randI]
-
+    randFood = random.choice(foods)
+    result = auth_api.search(q=randFood, lang = "en", count=10)
+    while len(result) < 1:
+        result = auth_api.search(q=randFood, lang = "en", count=10)
+    tweet = random.choice(result).text
 
     return flask.render_template(
         "index.html",
         tweet=tweet,
-        food=foods[randFood]
+        food=randFood
         )
     
 app.run(
