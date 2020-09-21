@@ -29,12 +29,17 @@ def index():
     while len(result) < 1:
         randFood = random.choice(foods)
         result = auth_api.search(q=randFood, lang = "en", count=5)
-    tweet = random.choice(result).text
-
+    tweet = random.choice(result)
+    tweetText = tweet.text
+    tweetAuthor = tweet.user.name
+    tweetDate = tweet.created_at
+    
     return flask.render_template(
         "index.html",
-        tweet=tweet,
-        food=randFood
+        tweet=tweetText,
+        food=randFood,
+        author=tweetAuthor,
+        date=tweetDate
         )
     
 app.run(
