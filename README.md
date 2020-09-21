@@ -14,7 +14,7 @@ To set this up on your machine you will need to follow these steps:
         
 2. Clone this repository using git clone
 3. In your local copy of this repo, create a new root-level file called project1.env
-4. Add the follwing lines into project1.env
+4. Add the follwing lines into project1.env:
 
         a. export API_KEY='your_key_here'
 
@@ -40,7 +40,11 @@ Questions:
         b. At first many tweets being pulled were in multiple languages, making the screen unreadable. After passing the lang='en' parameter to api.search(), 
             all tweets returned were in English
         
-        c. 
+        c. After a couple page loads, I would encounter the following error: 
+        
+                tweepy.error.RateLimitError: [{'message': 'Rate limit exceeded', 'code': 88}]
+        
+            Fixed the issue by lowering the number of tweets requested, and changing the search query if search() returned empty the first time.
         
     Known problems:
     
