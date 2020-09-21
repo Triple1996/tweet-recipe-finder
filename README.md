@@ -13,9 +13,9 @@
 >
 >    #### **(THESE ARE SECRET DO NOT SHARE WITH ANYONE)**
 >                
->2. Clone this repository using git clone
+>2. Clone this repository using git clone https://github.com/NJIT-CS490/project1-aaa237
 >3. In your local copy of this repo, create a new root-level file called project1.env
->4. Add the following lines into project1.env:
+>4. Add the following lines into project1.env and fill with your secret keys:
 >        
 >        a. export API_KEY='your_key_here'
 >        
@@ -27,10 +27,12 @@
 >                
 >    #### **Do not forget to save the file and run the command: source project1.env**
 >    
->5. Run the following, where the brackets indicate optional changes to the command you may have to run:
->    [sudo] [/path/to/]pip[3] install tweepy
->
->6. Run project.py
+>5. Install tweepy by running the following, where the brackets indicate optional changes 
+>    to the command you may have to run: [sudo] [/path/to/]pip[3] install tweepy
+>6. Install flask using the same process as above: [sudo] [/path/to/]pip[3] install flask
+>7. Run python project.py
+>8. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
+>9. Also on Cloud9, you may pop the preview out to view in browser.
 
 
 # Questions:
