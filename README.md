@@ -34,33 +34,33 @@
 
 
 # Questions:
-
-    ## Three technical issues I encountered:
-            
-        a. Encountered a sporadic list index out of bounds error when 
-            randomly selecting a tweet. Solved by first ensuring that  
-            the random number is less than the size of result list. 
-            Later changed to using random.choice(list) for conciseness.
-        
-        b. At first many tweets being pulled were in multiple languages, 
-            making the screen unreadable. After passing the lang='en' 
-            parameter to api.search(), all tweets returned were in English
-        
-        c. After a couple page loads, I would encounter the following error: 
-        
-            tweepy.error.RateLimitError: [{'message': 'Rate limit exceeded', 'code': 88}]
-        
-            Fixed the issue by lowering the number of tweets requested, 
-            and changing the search query if search() returned empty the first time.
-        
-    ## Known problems:
-            
-        Sometimes the tweets will not be 100% relevant to the food mentioned
-        
-    ## Things to improve:
-            
-        a. One way this program can be improved is to allow the user to 
-            input their own list of foods to cycle through
-            
-        b. Another feature that could be implemented is to generate multiple 
-            tweets at once and display them in a list
+>
+>    ## Three technical issues I encountered:
+>            
+>        a. Encountered a sporadic list index out of bounds error when 
+>            randomly selecting a tweet. Solved by first ensuring that  
+>            the random number is less than the size of result list. 
+>            Later changed to using random.choice(list) for conciseness.
+>        
+>        b. At first many tweets being pulled were in multiple languages, 
+>            making the screen unreadable. After passing the lang='en' 
+>            parameter to api.search(), all tweets returned were in English
+>        
+>        c. After a couple page loads, I would encounter the following error: 
+>        
+>            tweepy.error.RateLimitError: [{'message': 'Rate limit exceeded', 'code': 88}]
+>        
+>            Fixed the issue by lowering the number of tweets requested, 
+>            and changing the search query if search() returned empty the first time.
+>        
+>    ## Known problems:
+>            
+>        Sometimes the tweets will not be 100% relevant to the food mentioned
+>        
+>    ## Things to improve:
+>            
+>        a. One way this program can be improved is to allow the user to 
+>            input their own list of foods to cycle through
+>            
+>        b. Another feature that could be implemented is to generate multiple 
+>            tweets at once and display them in a list
