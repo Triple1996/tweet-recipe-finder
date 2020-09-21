@@ -51,11 +51,16 @@
 >            tweepy.error.RateLimitError: [{'message': 'Rate limit exceeded', 'code': 88}]
 >        
 >            Fixed the issue by lowering the number of tweets requested, 
->            and changing the search query if search() returned empty the first time.
+>            and changing the search query in the case that search() returned empty the first time.
 >        
 >    ## Known problems:
 >            
->        Sometimes the tweets will not be 100% relevant to the food mentioned
+>       Sometimes the tweets will not be 100% relevant to the food mentioned, 
+>            one way to handle this would be to check for a certain percentage 
+>            of "food-related" terms before displaying the tweet
+>            
+>       Occasionally the program will still reach the tweepy rate limit, despite handling for infinite loops.
+            This can be handled by catching the error and displaying a default tweet screen, instead of the error message
 >        
 >    ## Things to improve:
 >            
