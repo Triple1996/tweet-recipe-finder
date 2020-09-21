@@ -1,10 +1,21 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href={{ url_for('static', filename='project1styles.css') }} />
     </head>
+
     <body>
-        <h1>{{ food }}</h1>
-        <h2>{{ tweet }}</h2>
-        <h3>Posted by {{ author}} at {{ date }} </h3>
+        <div id="food">
+            <h1>{{ food }}</h1>
+        </div>
+        
+        <div id="main-content">
+            <div id="tweet-text">
+                <h2>{{ tweet }}</h2>
+            </div>
+            <div id="author">
+                <h3>Posted by {{ author}} at {{ date }} </h3>
+            </div>
+        </div>
     </body>
 </html>
