@@ -35,7 +35,7 @@
 
 # Questions:
 
->    ## Three technical issues I encountered:
+    ## Three technical issues I encountered:
             
         a. Encountered a sporadic list index out of bounds error when 
             randomly selecting a tweet. Solved by first ensuring that  
@@ -53,11 +53,11 @@
             Fixed the issue by lowering the number of tweets requested, 
             and changing the search query if search() returned empty the first time.
         
->    ## Known problems:
+    ## Known problems:
             
         Sometimes the tweets will not be 100% relevant to the food mentioned
         
->    ## Things to improve:
+    ## Things to improve:
             
         a. One way this program can be improved is to allow the user to 
             input their own list of foods to cycle through
