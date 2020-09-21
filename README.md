@@ -60,7 +60,7 @@
 >            of "food-related" terms before displaying the tweet
 >            
 >       b. Occasionally the program will still reach the tweepy rate limit, despite handling for infinite loops.
-            This can be handled by catching the error and displaying a default tweet screen, instead of the error message
+>            This can be handled by catching the error and displaying a default tweet screen, instead of the error message
 >        
 >    ## Things to improve:
 >            
