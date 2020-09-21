@@ -13,7 +13,7 @@ consumer_secret=os.environ['API_SECRET_KEY']
 access_token=os.environ['ACCESS_TOKEN']
 access_token_secret=os.environ['ACCESS_TOKEN_SECRET']
 
-foods = ['Lasagna', 'Philly Cheese Steak', 'Smoked Salmon', 'Chicken Tikka Masalaa', 'Hamburger', 'Quesadilla', 'Filet Mignon']
+foods = ['Lasagna', 'Philly Cheese Steak', 'Smoked Salmon', 'Rotisserie Chicken', 'Hamburger', 'Quesadilla', 'Filet Mignon']
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -25,9 +25,10 @@ app = flask.Flask(__name__)
 def index():
     
     randFood = random.choice(foods)
-    result = auth_api.search(q=randFood, lang = "en", count=10)
+    result = auth_api.search(q=randFood, lang = "en", count=5)
     while len(result) < 1:
-        result = auth_api.search(q=randFood, lang = "en", count=10)
+        randFood = random.choice(foods)
+        result = auth_api.search(q=randFood, lang = "en", count=5)
     tweet = random.choice(result).text
 
     return flask.render_template(
