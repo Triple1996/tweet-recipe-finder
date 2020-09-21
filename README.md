@@ -55,11 +55,11 @@
 >        
 >    ## Known problems:
 >            
->       Sometimes the tweets will not be 100% relevant to the food mentioned, 
+>       a. Sometimes the tweets will not be 100% relevant to the food mentioned, 
 >            one way to handle this would be to check for a certain percentage 
 >            of "food-related" terms before displaying the tweet
 >            
->       Occasionally the program will still reach the tweepy rate limit, despite handling for infinite loops.
+>       b. Occasionally the program will still reach the tweepy rate limit, despite handling for infinite loops.
             This can be handled by catching the error and displaying a default tweet screen, instead of the error message
 >        
 >    ## Things to improve:
