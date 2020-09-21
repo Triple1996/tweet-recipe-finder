@@ -1,12 +1,30 @@
 body {
-    background-color:#d9b3ff;
-    text-align: center;
-    padding-top: 10%;
-    background-repeat: no-repeat;
-
-    background-size: cover;
+    background-color: #ccccff;
+    padding: 20%
 }
-h1 {
-    text-align: left;
-    padding-left: 30%;
+
+#food {
+    text-align: center;
+    padding-right: 50%;
+}
+
+#main-content {
+    margin: auto;
+    border-style: solid;
+    border-radius: 15px 50px 30px;
+    border-width: 2px;
+    border-color: #FFFFFF;
+    padding: 20px;
+    background-color: #1da1f2;
+    width: 600px;
+    height: 225;
+
+}
+
+#tweet-text {
+    text-align: center;
+}
+
+#author {
+    text-align: center;
 }
