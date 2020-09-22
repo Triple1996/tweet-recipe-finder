@@ -29,12 +29,12 @@ def index():
     
     # choose random food and query twitter
     randFood = random.choice(foods)
-    result = auth_api.search(q=randFood, lang = "en", count=5)
+    result = auth_api.search(q=randFood, lang = "en", count=10)
     
     # if result is empty, pick a new food and query again
     while len(result) < 1:
         randFood = random.choice(foods)
-        result = auth_api.search(q=randFood, lang = "en", count=5)
+        result = auth_api.search(q=randFood, lang = "en", count=10)
     
     # randomly select a tweet from list of results
     tweet = random.choice(result)
