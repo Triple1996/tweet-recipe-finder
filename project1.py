@@ -35,15 +35,18 @@ def index():
     while len(result) < 1:
         randFood = random.choice(foods)
         result = auth_api.search(q=randFood, lang = "en", count=5)
-        
-    # extract tweet information
-    tweet = random.choice(result)
-    status = auth_api.get_status(tweet.id, tweet_mode="extended")
     
-    try:
+    # randomly select a tweet from list of results
+    tweet = random.choice(result)
+    
+    # using tweet id, return "extended" text and print full_text
+    status = auth_api.get_status(tweet.id, tweet_mode="extended")
+    try:    
         tweetText = status.retweeted_status.full_text
     except AttributeError:  # Not a Retweet
         tweetText = status.full_text
+        
+    # extract author and date/time published
     tweetAuthor = tweet.user.name
     tweetDate = tweet.created_at
     
