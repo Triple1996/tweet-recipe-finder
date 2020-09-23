@@ -16,7 +16,7 @@ load_dotenv(dotenv_path)
 
 # import API keys
 consumer_key=os.environ['KEY']
-consumer_secret=os.environ['SECRET_KEY']
+consumer_secret=os.environ['KEY_SECRET']
 access_token=os.environ['TOKEN']
 access_token_secret=os.environ['TOKEN_SECRET']
 
