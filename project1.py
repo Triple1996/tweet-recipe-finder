@@ -15,10 +15,10 @@ dotenv_path = join(dirname(__file__), 'project1.env')
 load_dotenv(dotenv_path)
 
 # import API keys
-consumer_key=os.environ['API_KEY']
-consumer_secret=os.environ['API_SECRET_KEY']
-access_token=os.environ['ACCESS_TOKEN']
-access_token_secret=os.environ['ACCESS_TOKEN_SECRET']
+consumer_key=os.environ['KEY']
+consumer_secret=os.environ['SECRET_KEY']
+access_token=os.environ['TOKEN']
+access_token_secret=os.environ['TOKEN_SECRET']
 
 # establish auth token
 auth = OAuthHandler(consumer_key, consumer_secret)
