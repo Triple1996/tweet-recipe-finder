@@ -3,10 +3,16 @@ from tweepy import API
 from tweepy import Cursor
 from datetime import datetime, date, time, timedelta
 from collections import Counter
+from os.path import join, dirname
+from dotenv import load_dotenv
 import random
 import sys
 import flask
 import os
+
+# grab .env variables without having to run "source project1.env"
+dotenv_path = join(dirname(__file__), 'project1.env')
+load_dotenv(dotenv_path)
 
 # import API keys
 consumer_key=os.environ['API_KEY']
