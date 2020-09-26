@@ -1,6 +1,7 @@
 html {
     background-image: linear-gradient(to bottom right, #9999ff, #ccccff);
     height: 100%;
+    background-size: cover;
 }
 
 #recipe-wrapper {

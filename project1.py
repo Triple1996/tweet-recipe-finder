@@ -85,6 +85,13 @@ def index():
     #    amounts.append(str(ingredient['amount']) + str(ingredient['unit']))
     #print(ingredients)
     #print(amounts)
+    ingredientsList = ['0.25 cups butter', '15.25 oz chocolate chips', 
+        '3.0 cups chocolate ice cream', 
+        '0.75 cups fudge ice cream topping', 
+        '7.0 maraschino cherries', 
+        '3.0 cups vanilla ice cream', 
+        '0.75 cups whipped cream']
+    
     # pass parameters to flask to render webpage
     return flask.render_template(
         "index.html",
@@ -94,6 +101,8 @@ def index():
         date=tweetDate,
         foodTitle=foodTitle,
         foodImg=foodImg,
+        len=len(ingredientsList),
+        ingredients=ingredientsList
     )
     
 app.run(
