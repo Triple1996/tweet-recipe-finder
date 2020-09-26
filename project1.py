@@ -60,7 +60,7 @@ def index():
     tweetDate = tweet.created_at
     
     # query spoonacular
-    spoonacularRes = requests.get('https://api.spoonacular.com/food/recipes/search?query='+randFood+'&apiKey='+api_key+'&number=5')
+    spoonacularRes = requests.get('https://api.spoonacular.com/food/products/search?query='+randFood+'&apiKey='+api_key+'&number=5')
     recipeList = spoonacularRes.json()['products']
     recipe = random.choice(recipeList)
     recipeTitle = recipe['title']
