@@ -61,11 +61,15 @@ def index():
     
     # query spoonacular
     spoonacularRes = requests.get('https://api.spoonacular.com/food/products/search?query='+randFood+'&apiKey='+api_key+'&number=5')
-    recipeList = spoonacularRes.json()['products']
-    recipe = random.choice(recipeList)
-    recipeTitle = recipe['title']
-    recipeImg = recipe['image']
-
+    foodsList = spoonacularRes.json()['products']
+    food = random.choice(foodsList)
+    foodTitle = food['title']
+    foodImg = food['image']
+    foodId = str(food['id'])
+    
+    # get recipe info using id
+    recipe = requests.get('https://api.spoonacular.com/recipes/'+foodId+'/information?includeNutrition=false')
+    
     # pass parameters to flask to render webpage
     return flask.render_template(
         "index.html",
@@ -73,8 +77,8 @@ def index():
         food=randFood,
         author=tweetAuthor,
         date=tweetDate,
-        recipe=recipeTitle,
-        recipeImg=recipeImg
+        foodTitle=foodTitle,
+        foodImg=foodImg
         )
     
 app.run(
