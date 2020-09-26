@@ -69,8 +69,8 @@ def index():
     ##foodTitle = food['title']
     ##foodImg = food['image']
     ##foodId = food['id']
-    foodTitle = "Cheesecake"
-    foodImg = "/static/cheesecake.jpg"
+    foodTitle = "Mashed Potatoes"
+    foodImg = "https://spoonacular.com/recipeImages/654679-312x231.jpg"
     
     
     
@@ -90,17 +90,22 @@ def index():
         '3.0 cups vanilla ice cream', 
         '0.75 cups whipped cream']
     
+    # params dict
+    d = {
+        'tweet':tweetText,
+        'food':randFood,
+        'author':tweetAuthor,
+        'date':tweetDate,
+        'foodTitle':foodTitle,
+        'foodImg':foodImg,
+        'len':len(ingredientsAmounts),
+        'ingredients':ingredientsAmounts
+    }
+        
     # pass parameters to flask to render webpage
     return flask.render_template(
         "index.html",
-        tweet=tweetText,
-        food=randFood,
-        author=tweetAuthor,
-        date=tweetDate,
-        foodTitle=foodTitle,
-        foodImg=foodImg,
-        len=len(ingredientsAmounts),
-        ingredients=ingredientsAmounts
+        **d
     )
     
 app.run(
