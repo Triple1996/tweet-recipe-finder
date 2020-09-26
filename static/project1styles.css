@@ -7,10 +7,10 @@ html {
 #recipe-wrapper {
     margin: auto;
     border-style: solid;
-    border-radius: 50px 50px 50px 15px;
+    border-radius: 50px 30px 15px 15px;
     border-color: #FFFFFF;
     border-width: 2px;
-    padding: 30px;
+    padding: 20px;
     background-color: #1da1f2;
     width: 45%;
     height: auto;
@@ -38,7 +38,7 @@ html {
 #tweet {
     margin: auto;
     border-style: solid;
-    border-radius: 15px 50px 30px;
+    border-radius: 15px 15px 30px 50px;
     border-width: 2px;
     border-color: #FFFFFF;
     padding: 20px;
