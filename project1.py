@@ -59,17 +59,28 @@ def index():
     tweetAuthor = tweet.user.name
     tweetDate = tweet.created_at
     
-    # query spoonacular
-    spoonacularRes = requests.get('https://api.spoonacular.com/food/products/search?query='+randFood+'&apiKey='+api_key+'&number=5')
-    foodsList = spoonacularRes.json()['products']
-    food = random.choice(foodsList)
+    #spoonacularRes = requests.get('https://api.spoonacular.com/food/products/search?query='+randFood+'&apiKey='+api_key+'&number=5')
+    
+    # query spoonacular recipes
+    spoonacularRes = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=5')
+    foodsList = spoonacularRes.json()
+    print(foodsList)
+    food = random.choice(foodsList['results'])
     foodTitle = food['title']
     foodImg = food['image']
     foodId = str(food['id'])
     
     # get recipe info using id
-    recipe = requests.get('https://api.spoonacular.com/recipes/'+foodId+'/information?includeNutrition=false')
-    
+    recipe = requests.get('https://api.spoonacular.com/recipes/'+foodId+'/information?apiKey='+api_key)
+    #print("id: " + foodId)
+    print(recipe.json()['extendedIngredients'])
+    #ingredients = []
+    #amounts = []
+    #for ingredient in recipe.json()['extendedIngredients']:
+    #    ingredients.append(ingredient['name'])
+    #    amounts.append(str(ingredient['amount']) + str(ingredient['unit']))
+    #print(ingredients)
+    #print(amounts)
     # pass parameters to flask to render webpage
     return flask.render_template(
         "index.html",
@@ -78,7 +89,8 @@ def index():
         author=tweetAuthor,
         date=tweetDate,
         foodTitle=foodTitle,
-        foodImg=foodImg
+        foodImg=foodImg,
+        foodId=foodId
         )
     
 app.run(
