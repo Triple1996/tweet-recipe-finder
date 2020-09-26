@@ -7,25 +7,23 @@
     <body>
      
         <div id="recipe-wrapper">
-            
             <h1 id="recipe-title">Cheesecake</h1>
-            
             <img id='foodPic' src = {{ foodImg }}/>
             
             <div id="ingredients-wrapper">
+                <h2 id="ingredients-header">Ingredients</h2>
                 
-                <h2>Ingredients</h2>
-                
-                <p id="ingredients-list">
-                    <ol>
-                    {%for i in range(0, len)%}
-                        <li>{{ ingredients[i] }} </li>
-                    {%endfor%}
-                    </ol>
-                </p>
-                
+                <div id="ingredients-list">
+                    <p>
+                        <ol>
+                        {%for i in range(0, len)%}
+                            <li>{{ ingredients[i] }} </li>
+                        {%endfor%}
+                        </ol>
+                    </p>
+                </div>
+                <p>Click <a href="https://www.google.com">here</a> for recipe!</p>
             </div>
-            
         </div>
         
         
