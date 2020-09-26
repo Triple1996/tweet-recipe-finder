@@ -78,14 +78,12 @@ def index():
     ##recipe = requests.get('https://api.spoonacular.com/recipes/'+foodId+'/information?apiKey='+api_key)
     #print("id: " + foodId)
     ##print(recipe.json()['extendedIngredients'])
-    #ingredients = []
-    #amounts = []
-    #for ingredient in recipe.json()['extendedIngredients']:
-    #    ingredients.append(ingredient['name'])
-    #    amounts.append(str(ingredient['amount']) + str(ingredient['unit']))
+    ##ingredientsAmounts = []
+    ##for ingredient in recipe.json()['extendedIngredients']:
+    ##    ingredientsAmounts.append(ingredient['originalString'])
     #print(ingredients)
     #print(amounts)
-    ingredientsList = ['0.25 cups butter', '15.25 oz chocolate chips', 
+    ingredientsAmounts = ['0.25 cups butter', '15.25 oz chocolate chips', 
         '3.0 cups chocolate ice cream', 
         '0.75 cups fudge ice cream topping', 
         '7.0 maraschino cherries', 
@@ -101,8 +99,8 @@ def index():
         date=tweetDate,
         foodTitle=foodTitle,
         foodImg=foodImg,
-        len=len(ingredientsList),
-        ingredients=ingredientsList
+        len=len(ingredientsAmounts),
+        ingredients=ingredientsAmounts
     )
     
 app.run(
