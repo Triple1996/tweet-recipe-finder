@@ -68,7 +68,7 @@ def index():
     ##food = random.choice(foodsList['results'])
     ##foodTitle = food['title']
     ##foodImg = food['image']
-    food = "Cheesecake"
+    ##foodId = food['id']
     foodTitle = "Cheesecake"
     foodImg = "/static/cheesecake.jpg"
     
