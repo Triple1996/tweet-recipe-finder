@@ -60,28 +60,47 @@ def index():
  
     # query spoonacular recipes
     foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=3').json()
-    food = random.choice(foodsList['results'])
-    foodTitle = food['title']
-    foodImg = food['image']
-    foodId = food['id']
+    if (foodsList['code'] == 402): # daily limit reached
+        foodTitle = "We're sorry, the daily limit has been reached for Spoonacular calls. Try again tomorrow."
+        foodImg = "http://i.stack.imgur.com/nLBGZ.png"
+        recipeLink = ""
+        cookTime = 0
+        servingSize = 0
+        ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
+    else: # pull a recipe from results
+        try:
+            food = random.choice(foodsList['results'])
+            foodTitle = food['title']
+            foodImg = food['image']
+            foodId = food['id']
+            
+            # get recipe info using id
+            recipe = requests.get('https://api.spoonacular.com/recipes/'+str(foodId)+'/information?apiKey='+api_key).json()
+            recipeLink = recipe['spoonacularSourceUrl']
+            cookTime = recipe['readyInMinutes']
+            servingSize=recipe['servings']
+            
+            # populate array of ingredients
+            ingredients = []
+            for ingredient in recipe['extendedIngredients']:
+                ingredients.append(ingredient['originalString'])
+            
+        except KeyError:
+            foodTitle = "We're sorry, a relevant recipe could not be found :("
+            foodImg = "http://i.stack.imgur.com/nLBGZ.png"
+            recipeLink = ""
+            cookTime = 0
+            servingSize = 0
+            ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
+        
+    
     #foodTitle = "Janet's St. Regis Pecan Pie with Honey Glazed Pecans"
     #foodImg="https://spoonacular.com/recipeImages/648453-312x231.jpg"
     #foodId = 648453
-    # get recipe info using id
-    recipe = requests.get('https://api.spoonacular.com/recipes/'+str(foodId)+'/information?apiKey='+api_key).json()
-
-    recipeLink = recipe['spoonacularSourceUrl']
-    cookTime = recipe['readyInMinutes']
-    servingSize=recipe['servings']
     #recipeLink = 'https://spoonacular.com/janets-st-regis-pecan-pie-w-honey-glazed-pecans-648453'
     #cookTime = 45
     #servingSize = 10
-
     
-    # populate array of ingredients
-    ingredients = []
-    for ingredient in recipe['extendedIngredients']:
-        ingredients.append(ingredient['originalString'])
     #ingredients = [
     #'cup firmly packed brown sugar',
     #"3 tablespoons butter.. please use real butter... don't make me come over there!",
@@ -95,6 +114,7 @@ def index():
     #'1/2 cup semisweet chocolate chips (I used minis, but any will work)',
     #"1 teaspoon vanilla(real..don't you dare use imitation!)"
     #]
+    
     # params dict
     d = {
         'tweet':tweetText,
