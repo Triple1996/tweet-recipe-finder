@@ -37,6 +37,7 @@ html {
     float: right;
     overflow: auto;
     height: auto;
+    min-width: 15%;
     max-width: 45%;
 }
 
