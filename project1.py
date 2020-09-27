@@ -68,10 +68,10 @@ def index():
     if (code == 402): # daily limit reached
         foodTitle = "We're sorry, the daily limit has been reached for Spoonacular calls. Try again tomorrow."
         foodImg = "http://i.stack.imgur.com/nLBGZ.png"
-        recipeLink = ""
+        recipeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         cookTime = 0
         servingSize = 0
-        ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
+        ingredients = ["Even", "refreshing", "the", "page", "won't", "save", "you", "now"]
     else: # pull a recipe from results
         try:
             food = random.choice(foodsList['results'])
@@ -93,14 +93,14 @@ def index():
         except KeyError:
             foodTitle = "We're sorry, a relevant recipe could not be found :("
             foodImg = "http://i.stack.imgur.com/nLBGZ.png"
-            recipeLink = ""
+            recipeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             cookTime = 0
             servingSize = 0
             ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
         except IndexError: 
             foodTitle = "We're sorry, a relevant recipe could not be found :("
             foodImg = "http://i.stack.imgur.com/nLBGZ.png"
-            recipeLink = ""
+            recipeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             cookTime = 0
             servingSize = 0
             ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
