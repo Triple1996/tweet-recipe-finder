@@ -81,7 +81,7 @@ def index():
             
             # get recipe info using id
             recipe = requests.get('https://api.spoonacular.com/recipes/'+str(foodId)+'/information?apiKey='+api_key).json()
-            recipeLink = recipe['spoonacularSourceUrl']
+            recipeLink = recipe['sourceUrl']
             cookTime = recipe['readyInMinutes']
             servingSize=recipe['servings']
             
