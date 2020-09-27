@@ -30,7 +30,6 @@ auth_api = API(auth)
 # list of foods to choose from
 foods = ['Roast Turkey', 'Stuffing', 'Pecan Pie', 'Sweet Potato Casserole', 'Mashed Potatoes', 'Turkey Gravy', 'Cheesecake']
 
-
 app = flask.Flask(__name__)
 
 @app.route('/') # Python decorator
