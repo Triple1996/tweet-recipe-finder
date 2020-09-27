@@ -20,7 +20,7 @@ consumer_key=os.environ['KEY']
 consumer_secret=os.environ['KEY_SECRET']
 access_token=os.environ['TOKEN']
 access_token_secret=os.environ['TOKEN_SECRET']
-api_key=os.environ['API_KEY']
+api_key=os.environ['API_KEY_NEW']
 
 # establish auth token
 auth = OAuthHandler(consumer_key, consumer_secret)
@@ -60,7 +60,12 @@ def index():
  
     # query spoonacular recipes
     foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=3').json()
-    if (foodsList['code'] == 402): # daily limit reached
+    try:
+        code = foodsList['code']
+    except KeyError:
+        code = 200
+        
+    if (code == 402): # daily limit reached
         foodTitle = "We're sorry, the daily limit has been reached for Spoonacular calls. Try again tomorrow."
         foodImg = "http://i.stack.imgur.com/nLBGZ.png"
         recipeLink = ""
