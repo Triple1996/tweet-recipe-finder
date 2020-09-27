@@ -36,6 +36,8 @@ html {
     margin: 20px;
     float: right;
     overflow: auto;
+    height: auto;
+    max-width: 45%;
 }
 
 #ingredients-list {
