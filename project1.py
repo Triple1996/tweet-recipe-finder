@@ -79,16 +79,33 @@ def index():
     #print("id: " + foodId)
     ##print(recipe.json()['extendedIngredients'])
     ##ingredientsAmounts = []
+    spoonRes =   [
+        {
+            'id': 14121,'aisle': 'Beverages','image': 'sparkling-water.png','consistency': 'liquid', 
+            'name': 'club soda','original': '1/4 cup club soda','originalString': '1/4 cup club soda', 
+            'originalName': 'club soda', 'amount': 0.25, 'unit': 'cup','meta': [],'metaInformation': [],
+            'measures':{ 'us': {'amount': 0.25, 'unitShort': 'cups', 'unitLong': 'cups'}, 
+            'metric': {'amount': 59.147, 'unitShort': 'ml', 'unitLong': 'milliliters'}}}, 
+        {'id': 2064, 'aisle': 'Produce', 'image': 'mint.jpg', 'consistency': 'solid', 'name': 'fresh mint', 'original': '1 tablespoon fresh mint', 'originalString': '1 tablespoon fresh mint', 'originalName': 'fresh mint', 'amount': 1.0, 'unit': 'tablespoon', 'meta': ['fresh'], 'metaInformation': ['fresh'], 'measures': {'us': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}, 'metric': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}}}, 
+        {'id': 9160, 'aisle': 'Produce', 'image': 'lime-juice.png', 'consistency': 'liquid', 'name': 'lime juice', 'original': '1 tablespoon lime juice', 'originalString': '1 tablespoon lime juice', 'originalName': 'lime juice', 'amount': 1.0, 'unit': 'tablespoon', 'meta': [], 'metaInformation': [], 'measures': {'us': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}, 'metric': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}}}, 
+        {'id': 14037, 'aisle': 'Alcoholic Beverages', 'image': 'rum-dark.jpg', 'consistency': 'liquid', 'name': 'rum', 'original': '1 ounce rum', 'originalString': '1 ounce rum', 'originalName': 'rum', 'amount': 1.0, 'unit': 'ounce', 'meta': [], 'metaInformation': [], 'measures': {'us': {'amount': 1.0, 'unitShort': 'oz', 'unitLong': 'ounce'}, 'metric': {'amount': 28.35, 'unitShort': 'g', 'unitLong': 'grams'}}}, 
+        {'id': 19335, 'aisle': 'Baking', 'image': 'sugar-in-bowl.png', 'consistency': 'solid', 'name': 'sugar', 'original': '1 tablespoon sugar', 'originalString': '1 tablespoon sugar', 'originalName': 'sugar', 'amount': 1.0, 'unit': 'tablespoon', 'meta': [], 'metaInformation': [], 'measures': {'us': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}, 'metric': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}}}
+    ]
+    
+    ingredientsAmounts = []
     ##for ingredient in recipe.json()['extendedIngredients']:
     ##    ingredientsAmounts.append(ingredient['originalString'])
+    for ingredient in spoonRes:
+        ingredientsAmounts.append(ingredient['originalString'])
+    
     #print(ingredients)
     #print(amounts)
-    ingredientsAmounts = ['0.25 cups butter', '15.25 oz chocolate chips', 
-        '3.0 cups chocolate ice cream', 
-        '0.75 cups fudge ice cream topping', 
-        '7.0 maraschino cherries', 
-        '3.0 cups vanilla ice cream', 
-        '0.75 cups whipped cream']
+    #ingredientsAmounts = ['0.25 cups butter', '15.25 oz chocolate chips', 
+    #    '3.0 cups chocolate ice cream', 
+    #    '0.75 cups fudge ice cream topping', 
+    #    '7.0 maraschino cherries', 
+    #    '3.0 cups vanilla ice cream', 
+    #    '0.75 cups whipped cream']
     
     # params dict
     d = {
