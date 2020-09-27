@@ -14,13 +14,11 @@
                 <h2 id="ingredients-header">Ingredients</h2>
                 
                 <div id="ingredients-list">
-                    <p>
                         <ul>
                         {%for i in range(0, len)%}
                             <li>{{ ingredients[i] }} </li>
                         {%endfor%}
                         </ul>
-                    </p>
                 </div>
                 <p>Click <a href="{{ recipeLink }}">here</a> for recipe!</p>
             </div>
