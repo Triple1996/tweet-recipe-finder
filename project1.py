@@ -69,13 +69,12 @@ def index():
     # get recipe info using id
     recipe = requests.get('https://api.spoonacular.com/recipes/'+str(foodId)+'/information?apiKey='+api_key).json()
     
-    recipeLink = recipe['sourceUrl']
+    recipeLink = recipe['spoonacularSourceUrl']
     
     # populate array of ingredients
     ingredients = []
     for ingredient in recipe['extendedIngredients']:
         ingredients.append(ingredient['originalString'])
-    
     
     # params dict
     d = {
