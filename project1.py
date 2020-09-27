@@ -97,6 +97,13 @@ def index():
             cookTime = 0
             servingSize = 0
             ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
+        except IndexError: 
+            foodTitle = "We're sorry, a relevant recipe could not be found :("
+            foodImg = "http://i.stack.imgur.com/nLBGZ.png"
+            recipeLink = ""
+            cookTime = 0
+            servingSize = 0
+            ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
         
     
     #foodTitle = "Janet's St. Regis Pecan Pie with Honey Glazed Pecans"
