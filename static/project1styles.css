@@ -10,13 +10,14 @@ html {
     border-radius: 50px 30px 15px 15px;
     border-color: #FFFFFF;
     border-width: 2px;
-    padding: 20px;
+    padding: 30px;
     background-color: #1da1f2;
     width: 55%;
     height: auto;
     text-align: center;
     margin-top: 20px;
     overflow: auto;
+    position: relative;
     
 }
 #foodPic {
@@ -26,6 +27,11 @@ html {
     margin: 20px;
 }
 
+#serving-and-prep{
+    position: absolute;
+    bottom: 30px;
+    left: 10%;
+}
 #ingredients-wrapper {
     margin: 20px;
     float: right;

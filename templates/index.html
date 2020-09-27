@@ -9,17 +9,17 @@
         <div id="recipe-wrapper">
             <h1 id="recipe-title">{{ foodTitle }}</h1>
             <img id='foodPic' src = "{{ foodImg }}"/>
-            
+            <p id="serving-and-prep">{{ servingSize }} servings | Cook time: {{ cookTime }} mins.</p>
             <div id="ingredients-wrapper">
                 <h2 id="ingredients-header">Ingredients</h2>
                 
                 <div id="ingredients-list">
                     <p>
-                        <ol>
+                        <ul>
                         {%for i in range(0, len)%}
                             <li>{{ ingredients[i] }} </li>
                         {%endfor%}
-                        </ol>
+                        </ul>
                     </p>
                 </div>
                 <p>Click <a href="{{ recipeLink }}">here</a> for recipe!</p>
