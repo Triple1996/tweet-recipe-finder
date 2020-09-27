@@ -66,11 +66,17 @@ def index():
     ##foodsList = spoonacularRes.json()
     ##print(foodsList)
     ##food = random.choice(foodsList['results'])
-    ##foodTitle = food['title']
-    ##foodImg = food['image']
-    ##foodId = food['id']
-    foodTitle = "Mashed Potatoes"
-    foodImg = "https://spoonacular.com/recipeImages/654679-312x231.jpg"
+    food = random.choice([
+        {'id': 651225, 'title': 'Mashed Potatoes with Garlic, Sage & Goat Cheese', 'image': 'https://spoonacular.com/recipeImages/651225-312x231.jpg', 'imageType': 'jpg'}, 
+        {'id': 640659, 'title': 'Creamy Mashed Potatoes', 'image': 'https://spoonacular.com/recipeImages/640659-312x231.jpg', 'imageType': 'jpg'}, 
+        {'id': 640661, 'title': 'Creamy Mashed Potatoes with Parsley', 'image': 'https://spoonacular.com/recipeImages/640661-312x231.jpg', 'imageType': 'jpg'}, 
+        {'id': 1022743, 'title': 'The Best Mashed Potatoes', 'image': 'https://spoonacular.com/recipeImages/1022743-312x231.jpg', 'imageType': 'jpg'}, 
+        {'id': 654679, 'title': 'Parmesan Mashed Potatoes', 'image': 'https://spoonacular.com/recipeImages/654679-312x231.jpg', 'imageType': 'jpg'}])
+    foodTitle = food['title']
+    foodImg = food['image']
+    foodId = food['id']
+    #foodTitle = "Mashed Potatoes"
+    #foodImg = "https://spoonacular.com/recipeImages/654679-312x231.jpg"
     
     
     
