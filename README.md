@@ -71,5 +71,3 @@
 >            
 >        b. Another feature that could be implemented is to generate multiple 
 >            tweets at once and display them in a list
-
-test edit
