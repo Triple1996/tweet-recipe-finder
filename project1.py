@@ -62,46 +62,22 @@ def index():
     #spoonacularRes = requests.get('https://api.spoonacular.com/food/products/search?query='+randFood+'&apiKey='+api_key+'&number=5')
     
     # query spoonacular recipes
-    ##spoonacularRes = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=5')
-    ##foodsList = spoonacularRes.json()
-    ##print(foodsList)
-    ##food = random.choice(foodsList['results'])
-    food = random.choice([
-        {'id': 651225, 'title': 'Mashed Potatoes with Garlic, Sage & Goat Cheese', 'image': 'https://spoonacular.com/recipeImages/651225-312x231.jpg', 'imageType': 'jpg'}, 
-        {'id': 640659, 'title': 'Creamy Mashed Potatoes', 'image': 'https://spoonacular.com/recipeImages/640659-312x231.jpg', 'imageType': 'jpg'}, 
-        {'id': 640661, 'title': 'Creamy Mashed Potatoes with Parsley', 'image': 'https://spoonacular.com/recipeImages/640661-312x231.jpg', 'imageType': 'jpg'}, 
-        {'id': 1022743, 'title': 'The Best Mashed Potatoes', 'image': 'https://spoonacular.com/recipeImages/1022743-312x231.jpg', 'imageType': 'jpg'}, 
-        {'id': 654679, 'title': 'Parmesan Mashed Potatoes', 'image': 'https://spoonacular.com/recipeImages/654679-312x231.jpg', 'imageType': 'jpg'}])
+    foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=5').json()
+    food = random.choice(foodsList['results'])
+
     foodTitle = food['title']
     foodImg = food['image']
     foodId = food['id']
-    #foodTitle = "Mashed Potatoes"
-    #foodImg = "https://spoonacular.com/recipeImages/654679-312x231.jpg"
-    
-    
     
     # get recipe info using id
-    ##recipe = requests.get('https://api.spoonacular.com/recipes/'+foodId+'/information?apiKey='+api_key)
-    
+    recipe = requests.get('https://api.spoonacular.com/recipes/'+str(foodId)+'/information?apiKey='+api_key).json()
+    #print(recipe.json())
     ##print(recipe.json()['extendedIngredients'])
-    ##ingredientsAmounts = []
-    spoonRes =   [
-        {
-            'id': 14121,'aisle': 'Beverages','image': 'sparkling-water.png','consistency': 'liquid', 
-            'name': 'club soda','original': '1/4 cup club soda','originalString': '1/4 cup club soda', 
-            'originalName': 'club soda', 'amount': 0.25, 'unit': 'cup','meta': [],'metaInformation': [],
-            'measures':{ 'us': {'amount': 0.25, 'unitShort': 'cups', 'unitLong': 'cups'}, 
-            'metric': {'amount': 59.147, 'unitShort': 'ml', 'unitLong': 'milliliters'}}}, 
-        {'id': 2064, 'aisle': 'Produce', 'image': 'mint.jpg', 'consistency': 'solid', 'name': 'fresh mint', 'original': '1 tablespoon fresh mint', 'originalString': '1 tablespoon fresh mint', 'originalName': 'fresh mint', 'amount': 1.0, 'unit': 'tablespoon', 'meta': ['fresh'], 'metaInformation': ['fresh'], 'measures': {'us': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}, 'metric': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}}}, 
-        {'id': 9160, 'aisle': 'Produce', 'image': 'lime-juice.png', 'consistency': 'liquid', 'name': 'lime juice', 'original': '1 tablespoon lime juice', 'originalString': '1 tablespoon lime juice', 'originalName': 'lime juice', 'amount': 1.0, 'unit': 'tablespoon', 'meta': [], 'metaInformation': [], 'measures': {'us': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}, 'metric': {'amount': 1.0, 'unitShort': 'Tbsp', 'unitLong': 'Tbsp'}}}, 
-        {'id': 14037, 'aisle': 'Alcoholic Beverages', 'image': 'rum-dark.jpg', 'consistency': 'liquid', 'name': 'rum', 'original': '1 ounce rum', 'originalString': '1 ounce rum', 'originalName': 'rum', 'amount': 1.0, 'unit': 'ounce', 'meta': [], 'metaInformation': [], 'measures': {'us': {'amount': 1.0, 'unitShort': 'oz', 'unitLong': 'ounce'}, 'metric': {'amount': 28.35, 'unitShort': 'g', 'unitLong': 'grams'}}}, 
-    ]
-    
+
     ingredientsAmounts = []
-    ##for ingredient in recipe.json()['extendedIngredients']:
-    ##    ingredientsAmounts.append(ingredient['originalString'])
-    for ingredient in spoonRes:
+    for ingredient in recipe['extendedIngredients']:
         ingredientsAmounts.append(ingredient['originalString'])
+    recipeLink = recipe['sourceUrl']
     
     # params dict
     d = {
@@ -112,7 +88,8 @@ def index():
         'foodTitle':foodTitle,
         'foodImg':foodImg,
         'len':len(ingredientsAmounts),
-        'ingredients':ingredientsAmounts
+        'ingredients':ingredientsAmounts,
+        'recipeLink':recipeLink
     }
         
     # pass parameters to flask to render webpage
