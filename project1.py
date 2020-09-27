@@ -58,26 +58,25 @@ def index():
     # extract author and date/time published
     tweetAuthor = tweet.user.name
     tweetDate = tweet.created_at
-    
-    #spoonacularRes = requests.get('https://api.spoonacular.com/food/products/search?query='+randFood+'&apiKey='+api_key+'&number=5')
-    
+ 
     # query spoonacular recipes
-    foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=5').json()
+    foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=3').json()
     food = random.choice(foodsList['results'])
-
+    
     foodTitle = food['title']
     foodImg = food['image']
     foodId = food['id']
     
     # get recipe info using id
     recipe = requests.get('https://api.spoonacular.com/recipes/'+str(foodId)+'/information?apiKey='+api_key).json()
-    #print(recipe.json())
-    ##print(recipe.json()['extendedIngredients'])
-
-    ingredientsAmounts = []
-    for ingredient in recipe['extendedIngredients']:
-        ingredientsAmounts.append(ingredient['originalString'])
+    
     recipeLink = recipe['sourceUrl']
+    
+    # populate array of ingredients
+    ingredients = []
+    for ingredient in recipe['extendedIngredients']:
+        ingredients.append(ingredient['originalString'])
+    
     
     # params dict
     d = {
@@ -87,8 +86,8 @@ def index():
         'date':tweetDate,
         'foodTitle':foodTitle,
         'foodImg':foodImg,
-        'len':len(ingredientsAmounts),
-        'ingredients':ingredientsAmounts,
+        'len':len(ingredients),
+        'ingredients':ingredients,
         'recipeLink':recipeLink
     }
         
