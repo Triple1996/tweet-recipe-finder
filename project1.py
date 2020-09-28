@@ -28,7 +28,7 @@ auth.set_access_token(access_token, access_token_secret)
 auth_api = API(auth)
 
 # list of foods to choose from
-foods = ['Roast Turkey', 'Stuffing', 'Pecan Pie', 'Sweet Potato Casserole', 'Mashed Potatoes', 'Turkey Gravy', 'Cheesecake']
+foods = ['Roast Turkey', 'Stuffing', 'Pecan Pie', 'Sweet Potato Casserole', 'Mashed Potatoes', 'Gravy', 'Cheesecake']
 
 app = flask.Flask(__name__)
 

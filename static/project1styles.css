@@ -36,6 +36,7 @@ html {
     position: absolute;
     bottom: 30px;
     left: 15%;
+    margin: 20px;
 }
 #ingredients-wrapper {
     margin: 20px;
