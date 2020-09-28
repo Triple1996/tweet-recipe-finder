@@ -13,12 +13,17 @@ html {
     padding: 20px;
     background-color: #1da1f2;
     width: 55%;
+    min-height: 350px;
     height: auto;
     text-align: center;
     margin-top: 20px;
     overflow: auto;
     position: relative;
-    
+
+}
+#recipe-title{
+    margin: auto;
+    max-width: 60%;
 }
 #foodPic {
     height: 225px;
