@@ -49,12 +49,12 @@ html {
 
 #ingredients-list {
     text-align: left;
+    min-height: 150px;
 }
 #tweet {
     margin: auto;
     border-style: solid;
     border-radius: 15px 15px 30px 50px;
-    border-width: 2px;
     border-color: #FFFFFF;
     padding: 20px;
     background-color: #1da1f2;
