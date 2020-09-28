@@ -54,13 +54,13 @@
 >     Click on settings, scroll down to "Config Vars", click "reveal config vars" and add each key:value pair.
 >     The config var names should be:
 > 
->>        KEY
->>
->>        KEY_SECRET
->>
->>        TOKEN
->>
->>        TOKEN_SECRET
+>        KEY
+>
+>        KEY_SECRET
+>
+>        TOKEN
+>
+>        TOKEN_SECRET
 >
 >18. Configure requirements.txt with all requirements needed to run your app (For this repo it is already filled in)
 >19. Configure Procfile with the command needed to run your app (For this repo it is already filled in)
