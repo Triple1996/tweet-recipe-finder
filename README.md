@@ -86,6 +86,11 @@
 >        
 >            Fixed the issue by lowering the number of tweets requested, 
 >            and changing the search query in the case that search() returned empty the first time.
+>
+>        d. Sometimes, depending on the size of the ingredients list, some text elements appeared 
+>            on top of the image or out of its respective HTML wrapper. This was solved by adding
+>            relative sizes and padding to certain divs, and making use of min/max sizes for height
+>            and width
 >        
 >    ## Known problems:
 >            
@@ -93,13 +98,14 @@
 >            one way to handle this would be to check for a certain percentage 
 >            of "food-related" terms before displaying the tweet
 >            
->       b. Occasionally the program will still reach the tweepy rate limit, despite handling for infinite loops.
->            This can be handled by catching the error and displaying a default tweet screen, instead of the error message
+>       b. Some HTML elements still do not survive resizing the window, and may appear 
+>            jumbled up or on top of one another
 >        
 >    ## Things to improve:
 >            
 >        a. One way this program can be improved is to allow the user to 
 >            input their own list of foods to cycle through
 >            
->        b. Another feature that could be implemented is to generate multiple 
->            tweets at once and display them in a list
+>        b. One improvement to be made would be returning multiple recipes 
+>            and tweets in one page load, so the user could navigate through
+>            a selection of recipes and choose one or a few that they like
