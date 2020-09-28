@@ -20,7 +20,7 @@ consumer_key=os.environ['KEY']
 consumer_secret=os.environ['KEY_SECRET']
 access_token=os.environ['TOKEN']
 access_token_secret=os.environ['TOKEN_SECRET']
-api_key=os.environ['API_KEY_NEW_TWO']
+api_key=os.environ['API_KEY']
 
 # establish auth token
 auth = OAuthHandler(consumer_key, consumer_secret)
