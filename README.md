@@ -44,7 +44,9 @@
 >15. Run the following lines:
 >        
 >        a. heroku login -i
+
 >        b. heroku create
+
 >        c. git push heroku master
 >
 >16. Navigate to your new heroku site
@@ -53,8 +55,11 @@
 >     The config var names should be:
 > 
 >        KEY
+
 >        KEY_SECRET
+
 >        TOKEN
+
 >        TOKEN_SECRET
 >
 >18. Configure requirements.txt with all requirements needed to run your app (For this repo it is already filled in)
