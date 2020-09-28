@@ -64,3 +64,9 @@ html {
     margin-top: 20px;
     overflow: auto;
 }
+
+#query {
+    position: relative;
+    color: #333333;
+    float: right;
+}

@@ -5,7 +5,7 @@
     </head>
 
     <body>
-     
+        
         <div id="recipe-wrapper">
             <h1 id="recipe-title">{{ foodTitle }}</h1>
             <img id='foodPic' src = "{{ foodImg }}"/>
@@ -28,8 +28,12 @@
         <div id="tweet">
             <h2 id="tweet-text">{{ tweet }}</h2>
             <h3 id="author">Posted by {{ author}} at {{ date }} </h3>
-            <h5 id="query">Tweet found by searching: {{ food }} </h5>
         </div>
         
+        <br><br><br><br><br>
+        
+        <div id="query">
+            <h5>Page generated with keyword: {{ food }} </h5>
+        </div>
     </body>
 </html>
