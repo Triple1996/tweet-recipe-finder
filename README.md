@@ -68,7 +68,7 @@
 
 
 # Questions:
->
+> 
 >    ## Three technical issues I encountered:
 >            
 >        a. Encountered a sporadic list index out of bounds error when 
