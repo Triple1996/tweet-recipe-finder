@@ -20,13 +20,13 @@
 >5. In your local copy of this repo, create a new root-level file called project1.env
 >6. Add the following lines into project1.env and fill with your secret keys:
 >        
->        a. export API_KEY='your_key_here'
+>        a. export KEY='your_key_here'
 >        
->        b. export API_SECRET_KEY='your_key_here'
+>        b. export KEY_SECRET='your_key_here'
 >        
->        c. export ACCESS_TOKEN='your_key_here'
+>        c. export TOKEN='your_key_here'
 >            
->        d. export ACCESS_TOKEN_SECRET='your_key_here'
+>        d. export TOKEN_SECRET='your_key_here'
 >
 >        e. export API_KEY='your_key_here'
 >                
