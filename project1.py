@@ -20,7 +20,7 @@ consumer_key=os.environ['KEY']
 consumer_secret=os.environ['KEY_SECRET']
 access_token=os.environ['TOKEN']
 access_token_secret=os.environ['TOKEN_SECRET']
-api_key=os.environ['API_KEY']
+api_key=os.environ['API_KEY_NEW_TWO']
 
 # establish auth token
 auth = OAuthHandler(consumer_key, consumer_secret)
@@ -66,7 +66,7 @@ def index():
         code = 200
         
     if (code == 402): # daily limit reached
-        foodTitle = "We're sorry, the daily limit has been reached for Spoonacular calls. Try again tomorrow."
+        foodTitle = "We're sorry, Spoonacular's api limit has been reached. Try again tomorrow."
         foodImg = "http://i.stack.imgur.com/nLBGZ.png"
         recipeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         cookTime = 0
@@ -91,19 +91,19 @@ def index():
                 ingredients.append(ingredient['originalString'])
             
         except KeyError:
-            foodTitle = "We're sorry, a relevant recipe could not be found :("
-            foodImg = "http://i.stack.imgur.com/nLBGZ.png"
+            foodTitle = "Oops! A recipe could not be found. Please try again."
+            foodImg = "https://ih0.redbubble.net/image.363362205.4456/flat,550x550,075,f.u4.jpg"
             recipeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             cookTime = 0
             servingSize = 0
-            ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
+            ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again"]
         except IndexError: 
-            foodTitle = "We're sorry, a relevant recipe could not be found :("
-            foodImg = "http://i.stack.imgur.com/nLBGZ.png"
+            foodTitle = "Oops! A recipe could not be found. Please try again."
+            foodImg = "https://ih0.redbubble.net/image.363362205.4456/flat,550x550,075,f.u4.jpg"
             recipeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             cookTime = 0
             servingSize = 0
-            ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again."]
+            ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again"]
         
     
     #foodTitle = "Janet's St. Regis Pecan Pie with Honey Glazed Pecans"
