@@ -2,20 +2,23 @@
 
 # To set this up on your machine you will need to follow these steps:
 
->1. Sign up for a Twitter developer account and find:
->        a. API key.      
+>1. Sign up for a Twitter developer account at: https://developer.twitter.com
+>2. Navigate to the developer portal and make a new app. Click the key symbol to find: 
+>
+>        a. API key (KEY)
 >        
->        b. API secrete key
+>        b. API secret key (KEY_SECRET)
 >        
->        c. ACCESS TOKEN key
+>        c. ACCESS TOKEN key (TOKEN_SECRET)
 >        
->        d. ACCESS TOKEN SECRET key  
+>        d. ACCESS TOKEN SECRET key (TOKEN_SECRET_KEY)
 >
 >    #### **(THESE ARE SECRET DO NOT SHARE WITH ANYONE)**
->                
->2. Clone this repository using git clone https://github.com/NJIT-CS490/project1-aaa237
->3. In your local copy of this repo, create a new root-level file called project1.env
->4. Add the following lines into project1.env and fill with your secret keys:
+>
+>3. Sign up for a Spoonacular API account, confirm your email and copy your API_KEY
+>4. Clone this repository using git clone https://github.com/NJIT-CS490/project1-aaa237
+>5. In your local copy of this repo, create a new root-level file called project1.env
+>6. Add the following lines into project1.env and fill with your secret keys:
 >        
 >        a. export API_KEY='your_key_here'
 >        
@@ -24,15 +27,39 @@
 >        c. export ACCESS_TOKEN='your_key_here'
 >            
 >        d. export ACCESS_TOKEN_SECRET='your_key_here'
+>
+>        e. export API_KEY='your_key_here'
 >                
->    #### **Do not forget to save the file and run the command: source project1.env**
+>    #### **Do not forget to save the file**
 >    
->5. Install tweepy by running the following, where the brackets indicate optional changes 
+>7. Install tweepy by running the following, where the brackets indicate optional changes 
 >    to the command you may have to run: [sudo] [/path/to/]pip[3] install tweepy
->6. Install flask using the same process as above: [sudo] [/path/to/]pip[3] install flask
->7. Run python project.py
->8. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
->9. Also on Cloud9, you may pop the preview out to view in browser.
+>8. Install flask using the same process as above: [sudo] [/path/to/]pip[3] install flask
+>8. Install python-dotenv using the same process as above: [sudo] [/path/to/]pip[3] install python-dotenv
+>10. If running on Cloud9, that's it! Run python project.py
+>11. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
+>12. Also on Cloud9, you may pop the preview out to view in browser.
+>13. If you want to deploy this app onto Heroku, you must first register for an account at: https://signup.heroku.com/login
+>14. Install heroku by running npm install -g heroku
+>15. Run the following lines:
+>        
+>        a. heroku login -i
+>        b. heroku create
+>        c. git push heroku master
+>
+>16. Navigate to your new heroku site
+>17. Add your secret keys (from project1.env) by going to https://dashboard.heroku.com/apps and clicking on your app.
+>     Click on settings, scroll down to "Config Vars", click "reveal config vars" and add each key:value pair.
+>     The config var names should be:
+> 
+>        KEY
+>        KEY_SECRET
+>        TOKEN
+>        TOKEN_SECRET
+>
+>18. Configure requirements.txt with all requirements needed to run your app (For this repo it is already filled in)
+>19. Configure Procfile with the command needed to run your app (For this repo it is already filled in)
+>20. To debug, you can use heroku log --tail
 
 
 # Questions:
