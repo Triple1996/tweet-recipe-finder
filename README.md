@@ -43,11 +43,11 @@
 >14. Install heroku by running npm install -g heroku
 >15. Run the following lines:
 >        
->        a. heroku login -i
+>         a. heroku login -i
 >
->        b. heroku create
->
->        c. git push heroku master
+>         b. heroku create
+> 
+>         c. git push heroku master
 >
 >16. Navigate to your new heroku site
 >17. Add your secret keys (from project1.env) by going to https://dashboard.heroku.com/apps and clicking on your app.
