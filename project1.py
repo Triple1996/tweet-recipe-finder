@@ -59,12 +59,11 @@ def index():
         # extract author and date/time published
         tweetSignature = " Posted by " + str(tweet.user.name) + " at " + str(tweet.created_at)
      
-    except tweepy.TweepError:
+    except tweepy.TweepError:   # api limit reached (most likely) or some other error
         tweetText = "Tweepy's API limit has been reached. Try again in 15-20 minutes."
         tweetSignature = " "
    
-    
-
+   
     # query spoonacular recipes
     foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=3').json()
     
@@ -114,6 +113,9 @@ def index():
             servingSize = 0
             ingredients = ["Try", "refreshing", "the", "page", "to", "search", "again"]
         
+        
+        
+    # Below are hardcoded, test values. Disregard unless expanding on this code
     
     #foodTitle = "Janet's St. Regis Pecan Pie with Honey Glazed Pecans"
     #foodImg="https://spoonacular.com/recipeImages/648453-312x231.jpg"
