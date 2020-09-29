@@ -1,3 +1,4 @@
+import tweepy
 from tweepy import OAuthHandler
 from tweepy import API
 from tweepy import Cursor
@@ -37,34 +38,42 @@ def index():
     
     # choose random food and query twitter
     randFood = random.choice(foods)
-    tweepyResult = auth_api.search(q=randFood, lang = "en", count=10)
-    
-    # if tweepyResult is empty, pick a new food and query again
-    while len(tweepyResult) < 1:
-        randFood = random.choice(foods)
+    try:
         tweepyResult = auth_api.search(q=randFood, lang = "en", count=10)
-    
-    # randomly select a tweet from list of results
-    tweet = random.choice(tweepyResult)
-    
-    # using tweet id, return "extended" text and print full_text
-    status = auth_api.get_status(tweet.id, tweet_mode="extended")
-    try:    
-        tweetText = status.retweeted_status.full_text
-    except AttributeError:  # Not a Retweet
-        tweetText = status.full_text
         
-    # extract author and date/time published
-    tweetAuthor = tweet.user.name
-    tweetDate = tweet.created_at
- 
+         # if tweepyResult is empty, pick a new food and query again
+        while len(tweepyResult) < 1:
+            randFood = random.choice(foods)
+            tweepyResult = auth_api.search(q=randFood, lang = "en", count=10)
+    
+        # randomly select a tweet from list of results
+        tweet = random.choice(tweepyResult)
+    
+        # using tweet id, return "extended" text and store full_text
+        status = auth_api.get_status(tweet.id, tweet_mode="extended")
+        try:    
+            tweetText = status.retweeted_status.full_text
+        except AttributeError:  # Not a Retweet
+            tweetText = status.full_text
+        
+        # extract author and date/time published
+        tweetSignature = " Posted by " + str(tweet.user.name) + " at " + str(tweet.created_at)
+     
+    except tweepy.TweepError:
+        tweetText = "Tweepy's API limit has been reached. Try again in 15-20 minutes."
+        tweetSignature = " "
+   
+    
+
     # query spoonacular recipes
     foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=3').json()
+    
+    # check for code 402, API limit reached
     try:
         code = foodsList['code']
     except KeyError:
         code = 200
-        
+    
     if (code == 402): # daily limit reached
         foodTitle = "We're sorry, Spoonacular's api limit has been reached. Try again tomorrow."
         foodImg = "http://i.stack.imgur.com/nLBGZ.png"
@@ -131,8 +140,7 @@ def index():
     d = {
         'tweet':tweetText,
         'food':randFood,
-        'author':tweetAuthor,
-        'date':tweetDate,
+        'signature':tweetSignature,
         'foodTitle':foodTitle,
         'foodImg':foodImg,
         'len':len(ingredients),
