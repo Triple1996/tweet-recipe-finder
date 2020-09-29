@@ -62,12 +62,15 @@
 >
 >         TOKEN_SECRET
 >
+>         API_KEY
+>
 >18. Configure requirements.txt with all requirements needed to run your app (For this repo it is already filled in)
 >19. Configure Procfile with the command needed to run your app (For this repo it is already filled in)
 >20. To debug, you can use heroku log --tail
 
 
 # Questions:
+ 
 > 
 > 
 >    ## Three technical issues I encountered:
