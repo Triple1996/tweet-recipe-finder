@@ -9,9 +9,9 @@
 >        
 >        b. API secret key (KEY_SECRET)
 >        
->        c. ACCESS TOKEN key (TOKEN_SECRET)
+>        c. ACCESS TOKEN key (TOKEN)
 >        
->        d. ACCESS TOKEN SECRET key (TOKEN_SECRET_KEY)
+>        d. ACCESS TOKEN SECRET key (TOKEN_SECRET)
 >
 >    #### **(THESE ARE SECRET DO NOT SHARE WITH ANYONE)**
 >
@@ -68,7 +68,7 @@
 
 
 # Questions:
-
+> 
 > 
 >    ## Three technical issues I encountered:
 >            
