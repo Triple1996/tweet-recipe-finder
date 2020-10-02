@@ -1,9 +1,6 @@
 import tweepy
 from tweepy import OAuthHandler
 from tweepy import API
-from tweepy import Cursor
-from datetime import datetime, date, time, timedelta
-from collections import Counter
 from os.path import join, dirname
 from dotenv import load_dotenv
 import random
@@ -32,7 +29,6 @@ auth_api = API(auth)
 foods = ['Roast Turkey', 'Stuffing', 'Pecan Pie', 'Sweet Potato Casserole', 'Mashed Potatoes', 'Gravy', 'Cheesecake']
 
 app = flask.Flask(__name__)
-
 @app.route('/') # Python decorator
 def index():
     
@@ -63,7 +59,7 @@ def index():
         tweetText = "Tweepy's API limit has been reached. Try again in 15-20 minutes."
         tweetSignature = " "
    
-   
+    
     # query spoonacular recipes
     foodsList = requests.get('https://api.spoonacular.com/recipes/complexSearch?query='+randFood+'&apiKey='+api_key+'&number=3').json()
     
