@@ -5,7 +5,9 @@
     </head>
 
     <body>
-        
+        <div id="header">
+            <h1>Find a random recipe/tweet combo below!</h1>
+        </div>
         <div id="recipe-wrapper">
             <h1 id="recipe-title">{{ foodTitle }}</h1>
             <img id='foodPic' src = "{{ foodImg }}"/>
@@ -21,6 +23,7 @@
                         </ul>
                 </div>
                 <p>Click <a href="{{ recipeLink }}">here</a> for recipe!</p>
+                <p>or to get a new recipe, click <a onClick="window.location.reload();" href="">here</a></p>
             </div>
         </div>
         
